@@ -1,10 +1,15 @@
+import Factories.StrategyFactory;
+import Strategy.DatatypeStrategy;
+import java.io.IOException;
+import Exception.*;
 /**
  * Created by dmi on 02.07.17.
  */
 public class Main {
     public static void main(String[] args) {
+        DatatypeStrategy strategy;
         if (args.length < 4) {
-            System.err.println("Error: must ");
+            System.err.println("Error: application requires 4 arguments");
             return;
         }
         final String inputFilename = args[0];
@@ -12,17 +17,15 @@ public class Main {
         final String typeOfData = args[2];
         final String sortOrder = args[3];
 
-
-        DatatypeContext ctx = new DatatypeContext();
-        if (typeOfData.equals("-i")) {
-            ctx.setDatatypeStrategy(new IntegerStrategy());
-        } else if (typeOfData.equals("-s")) {
-            ctx.setDatatypeStrategy(new StringStrategy());
-        } else {
-            System.out.println("Error: wrong order");
+        try {
+            strategy = StrategyFactory.getStrategy(typeOfData, sortOrder, inputFilename, outputFilename);
+            strategy.run();
+        } catch (DatatypeStrategyFactoryException e) {
+            System.err.println(e.getMessage());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Wrong file: not only integers presented " + e.getMessage());
         }
-        ctx.readFile(inputFilename);
-        ctx.sort(sortOrder);
-        ctx.writeFile(outputFilename);
     }
 }

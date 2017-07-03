@@ -1,0 +1,6 @@
+/home/dmi/examples/java/rmq/src/main/java/Factories/StrategyFactory.java
+/home/dmi/examples/java/rmq/src/main/java/Strategy/StringStrategy.java
+/home/dmi/examples/java/rmq/src/main/java/Strategy/DatatypeStrategy.java
+/home/dmi/examples/java/rmq/src/main/java/Main.java
+/home/dmi/examples/java/rmq/src/main/java/Strategy/IntegerStrategy.java
+/home/dmi/examples/java/rmq/src/main/java/Exception/DatatypeStrategyFactoryException.java
