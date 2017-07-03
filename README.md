@@ -17,7 +17,7 @@ maven package
 
 в ./target/ будет находится файл dmi-1.0-SNAPSHOT.jar
 
-java -jar dmi-1.0-SNAPSHOT.jar <inputFile> <outputFile> <dataType> <sortOrder>
+java -jar dmi-1.0-SNAPSHOT.jar {inputFile} {outputFile} {dataType} {sortOrder}
 
 inputFile - имя входного файла, outputFile -  имя выходного файла
 
