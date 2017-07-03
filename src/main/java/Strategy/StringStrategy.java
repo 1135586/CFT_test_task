@@ -48,7 +48,7 @@ public class StringStrategy extends DatatypeStrategy {
         for (int j = 1; j < data.size(); j++) {
             String key = data.get(j);
             int i = j - 1;
-            while (i > -1 && (data.get(i).compareTo(key) < 0)) {
+            while (i > -1 && ((data.get(i)).compareTo(key) < 0)) {
                 data.set(i + 1, data.get(i));
                 i--;
             }
